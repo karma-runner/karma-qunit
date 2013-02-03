@@ -9,6 +9,24 @@ var Emitter = function() {
     listeners[event].push(fn);
   };
 
+  this.emit = function(event) {
+    var eventListeners = listeners[event];
+
+    if (!eventListeners) return;
+
+    var i = 0;
+    while (i < eventListeners.length) {
+      eventListeners[i].apply(null, Array.prototype.slice.call(arguments, 1));
+      i++;
+    }
+  };
+};
+
+var MockSocket = Emitter;
+
+var MockRunner = function() {
+  Emitter.call(this);
+
   this.done = function(fn) {
     this.on("done", fn);
   };
@@ -24,18 +42,4 @@ var Emitter = function() {
   this.log = function(fn) {
     this.on("log", fn);
   };
-
-  this.emit = function(event) {
-    var eventListeners = listeners[event];
-
-    if (!eventListeners) return;
-
-    var i = 0;
-    while (i < eventListeners.length) {
-      eventListeners[i].apply(null, Array.prototype.slice.call(arguments, 1));
-      i++;
-    }
-  };
 };
-
-var MockSocket = Emitter;

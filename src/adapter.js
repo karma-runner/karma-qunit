@@ -1,42 +1,41 @@
-var createQUnitStartFn = function (tc) {
+var createQUnitStartFn = function (tc, runnerPassedIn) {
 	return function () {
-		(function (tc, runner) {
-			var totalNumberOfTest = 0;
-			var timer = null;
-      var testResult = {};
+    var runner = runnerPassedIn || window.QUnit;
+		var totalNumberOfTest = 0;
+		var timer = null;
+    var testResult = {};
 
-			runner.done(function () {
-				tc.info({ total: totalNumberOfTest });
-				tc.complete({
-         coverage: window.__coverage__
-        });
-			});
-
-			runner.testStart(function (test) {
-				totalNumberOfTest += 1;
-				timer = new Date().getTime();
-        testResult = { success: true, errors: [] };
-			});
-
-      runner.log(function (details) {
-        if (!details.result) {
-          testResult.success = false;
-          testResult.errors.push(details.message + (details.source ? ('\n' + details.source) : ''));
-        }
+		runner.done(function () {
+			tc.info({ total: totalNumberOfTest });
+			tc.complete({
+       coverage: window.__coverage__
       });
+		});
 
-			runner.testDone(function (test) {
-				var result = {
-					description: test.name,
-					suite: [test.module] || [],
-					success: testResult.success,
-					log: testResult.errors || [],
-					time: new Date().getTime() - timer
-				};
+		runner.testStart(function (test) {
+			totalNumberOfTest += 1;
+			timer = new Date().getTime();
+      testResult = { success: true, errors: [] };
+		});
 
-				tc.result(result);
-			});
-		})(tc, window.QUnit);
+    runner.log(function (details) {
+      if (!details.result) {
+        testResult.success = false;
+        testResult.errors.push(details.message + (details.source ? ('\n' + details.source) : ''));
+      }
+    });
+
+		runner.testDone(function (test) {
+			var result = {
+				description: test.name,
+				suite: [test.module] || [],
+				success: testResult.success,
+				log: testResult.errors || [],
+				time: new Date().getTime() - timer
+			};
+
+			tc.result(result);
+		});
 	};
 };
 

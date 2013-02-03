@@ -11,9 +11,8 @@ describe('adapter qunit', function() {
 
     beforeEach(function() {
       tc = new Testacular(new MockSocket(), {});
-      runner = new Emitter();
-      window.QUnit = runner;
-      reporter = new (createQUnitStartFn(tc))();
+      runner = new MockRunner();
+      reporter = new (createQUnitStartFn(tc, runner))();
     });
 
 
