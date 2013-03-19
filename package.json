@@ -1,17 +1,17 @@
 {
-  "name": "testacular-qunit",
+  "name": "karma-qunit",
   "version": "0.0.1",
-  "description": "A Testacular plugin. Adapter for QUnit testing framework.",
+  "description": "A Karma plugin. Adapter for QUnit testing framework.",
   "main": "lib/index.js",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/testacular/testacular-qunit.git"
+    "url": "git://github.com/karma-runner/karma-qunit.git"
   },
   "keywords": [
-    "testacular-plugin",
+    "karma-plugin",
     "adapter",
     "qunit"
   ],
@@ -21,14 +21,14 @@
   "devDependencies": {
     "grunt": "~0.4.0rc5",
     "grunt-contrib-jshint": "~0.1.1rc5",
-    "testacular": "*",
-    "testacular-jasmine": "*",
-    "testacular-chrome-launcher": "*",
-    "testacular-firefox-launcher": "*",
-    "gruntacular": "~0.1.0"
+    "karma": "*",
+    "karma-jasmine": "*",
+    "karma-chrome-launcher": "*",
+    "karma-firefox-launcher": "*",
+    "grunt-karma": "~0.3"
   },
   "peerDependencies": {
-    "testacular": "~0.7"
+    "karma": "~0.9"
   },
   "license": "MIT"
 }
