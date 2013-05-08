@@ -42,4 +42,12 @@ var MockRunner = function() {
   this.log = function(fn) {
     this.on("log", fn);
   };
+
+  this.load = function() {
+    // NOOP
+  };
+
+  this.start = function() {
+    // NOOP
+  };
 };
