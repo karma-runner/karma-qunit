@@ -1,13 +1,3 @@
-window.QUnit.config.autostart = false;
-
-(function removeEvent(elem, type, fn) {
-    if (elem.removeEventListener) {
-        elem.removeEventListener(type, fn, false);
-    } else {
-        elem.detachEvent('on' + type, fn);
-    }
-}(window, 'load', window.QUnit.load));
-
 var createQUnitStartFn = function (tc, runnerPassedIn) {
     return function () {
         var runner = runnerPassedIn || window.QUnit;
