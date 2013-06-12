@@ -28,7 +28,7 @@ var createQUnitStartFn = function (tc, runnerPassedIn) {
 		runner.testDone(function (test) {
 			var result = {
 				description: test.name,
-				suite: [test.module] || [],
+				suite: test.module && [test.module] || [],
 				success: testResult.success,
 				log: testResult.errors || [],
 				time: new Date().getTime() - timer
