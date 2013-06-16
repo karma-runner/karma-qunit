@@ -36,6 +36,9 @@ var createQUnitStartFn = function (tc, runnerPassedIn) {
 
       tc.result(result);
     });
+
+    runner.load();
+    runner.start();
   };
 };
 

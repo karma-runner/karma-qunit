@@ -2,6 +2,13 @@
 
 %CONTENT%
 
+window.QUnit.config.autostart = false;
+
+if (window.removeEventListener) {
+  window.removeEventListener('load', window.QUnit.load, false);
+} else {
+  window.detachEvent('onload', window.QUnit.load);
+}
 
 window.__karma__.start = createQUnitStartFn(window.__karma__);
 window.dump = createDumpFn(window.__karma__, function (value) {
