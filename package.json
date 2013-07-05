@@ -16,16 +16,18 @@
     "qunit"
   ],
   "author": "Vojta Jina <vojta.jina@gmail.com>",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "grunt": "~0.4.0rc5",
-    "grunt-contrib-jshint": "~0.1.1rc5",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6",
     "karma": "*",
     "karma-jasmine": "*",
     "karma-chrome-launcher": "*",
     "karma-firefox-launcher": "*",
-    "grunt-karma": "~0.3"
+    "grunt-karma": "~0.4",
+    "grunt-bump": "~0.0.7",
+    "grunt-npm": "~0.0.2",
+    "grunt-auto-release": "~0.0.2"
   },
   "peerDependencies": {
     "karma": "~0.9"
