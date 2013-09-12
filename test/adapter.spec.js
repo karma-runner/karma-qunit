@@ -52,7 +52,7 @@ describe('adapter qunit', function() {
       it('should report failed result', function() {
         spyOn(tc, 'result').andCallFake(function(result) {
           expect(result.success).toBe(false);
-          expect(result.log).toEqual(['Big trouble.']);
+          expect(result.log).toEqual(['Big trouble.\n']);
         });
 
         var mockQUnitResult = {

@@ -20,8 +20,22 @@ var createQUnitStartFn = function (tc, runnerPassedIn) {
 
     runner.log(function (details) {
       if (!details.result) {
+        var msg = '';
+
+        if (details.message) {
+          msg += details.message + '\n';
+        }
+
+        if (typeof details.expected !== 'undefined') {
+          msg += 'Expected: ' + details.expected + '\n' + 'Actual: ' + details.actual + '\n';
+        }
+
+        if (details.source) {
+          msg += details.source + '\n';
+        }
+
         testResult.success = false;
-        testResult.errors.push(details.message + (details.source ? ('\n' + details.source) : ''));
+        testResult.errors.push(msg);
       }
     });
 
