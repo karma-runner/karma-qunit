@@ -26,6 +26,41 @@ describe('adapter qunit', function() {
       });
     });
 
+    describe('total number of tests', function() {
+
+      it('should use the tracking in qunit if available', function() {
+        spyOn(tc, 'info').andCallFake(function(result) {
+          expect(result.total).toBe(1);
+        });
+
+        var mockQUnitResult = {
+          totalTests: 1
+        };
+
+        runner.emit('begin', mockQUnitResult);
+        expect(tc.info).toHaveBeenCalled();
+      });
+
+      it('should use our own tracking if none is available', function() {
+        spyOn(tc, 'info').andCallFake(function(result) {
+          expect(result.total).toBe(1);
+        });
+
+        var mockQUnitResult = {
+          name: 'should do something',
+          module: 'desc1',
+          failed: 0
+        };
+
+        runner.emit('testStart', mockQUnitResult);
+        runner.emit('testDone', mockQUnitResult);
+        runner.emit('done');
+
+        expect(tc.info).toHaveBeenCalled();
+      });
+
+    });
+
 
     describe('test end', function() {
 
