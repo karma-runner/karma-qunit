@@ -4,9 +4,22 @@ var createQUnitStartFn = function (tc, runnerPassedIn) {
     var totalNumberOfTest = 0;
     var timer = null;
     var testResult = {};
+    var supportsTestTracking = false;
+
+    if ( runner.begin ) {
+      runner.begin(function( args ) {
+        if ( args && typeof args.totalTests === 'number' ) {
+          tc.info({ total: args.totalTests });
+          supportsTestTracking = true;
+        }
+      });
+    }
 
     runner.done(function () {
-      tc.info({ total: totalNumberOfTest });
+      if ( !supportsTestTracking ) {
+        tc.info({ total: totalNumberOfTest });
+      }
+
       tc.complete({
        coverage: window.__coverage__
       });

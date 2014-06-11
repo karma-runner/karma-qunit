@@ -27,6 +27,10 @@ var MockSocket = Emitter;
 var MockRunner = function() {
   Emitter.call(this);
 
+  this.begin = function(fn) {
+    this.on("begin", fn);
+  };
+
   this.done = function(fn) {
     this.on("done", fn);
   };
