@@ -1,4 +1,4 @@
-# karma-qunit [![Build Status](https://travis-ci.org/karma-runner/karma-qunit.png?branch=master)](https://travis-ci.org/karma-runner/karma-qunit)
+# karma-qunit [![Build Status](https://travis-ci.org/karma-runner/karma-qunit.svg?branch=master)](https://travis-ci.org/karma-runner/karma-qunit)
 
 > Adapter for the [QUnit](http://qunitjs.com/) testing framework.
 
