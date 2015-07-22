@@ -61,6 +61,22 @@ describe('adapter qunit', function() {
 
     });
 
+    describe('test start', function() {
+      it('should create a qunit-fixture element, and remove if exists', function() {
+        runner.emit('testStart', {});
+
+        var fixture = document.getElementById('qunit-fixture');
+        expect(fixture).toBeDefined();
+
+        fixture.className = 'marker';
+        runner.emit('testStart', {});
+
+        fixture = document.getElementById('qunit-fixture');
+        expect(fixture).toBeDefined();
+        expect(fixture.className).not.toBe('marker');
+      });
+
+    });
 
     describe('test end', function() {
 
