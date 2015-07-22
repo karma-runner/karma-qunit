@@ -1,57 +1,57 @@
-var Emitter = function() {
-  var listeners = {};
+var Emitter = function () {
+  var listeners = {}
 
-  this.on = function(event, fn) {
+  this.on = function (event, fn) {
     if (!listeners[event]) {
-      listeners[event] = [];
+      listeners[event] = []
     }
 
-    listeners[event].push(fn);
-  };
+    listeners[event].push(fn)
+  }
 
-  this.emit = function(event) {
-    var eventListeners = listeners[event];
+  this.emit = function (event) {
+    var eventListeners = listeners[event]
 
-    if (!eventListeners) return;
+    if (!eventListeners) return
 
-    var i = 0;
+    var i = 0
     while (i < eventListeners.length) {
-      eventListeners[i].apply(null, Array.prototype.slice.call(arguments, 1));
-      i++;
+      eventListeners[i].apply(null, Array.prototype.slice.call(arguments, 1))
+      i++
     }
-  };
-};
+  }
+}
 
-var MockSocket = Emitter;
+var MockSocket = Emitter // eslint-disable-line no-unused-vars
 
-var MockRunner = function() {
-  Emitter.call(this);
+var MockRunner = function () { // eslint-disable-line no-unused-vars
+  Emitter.call(this)
 
-  this.begin = function(fn) {
-    this.on("begin", fn);
-  };
+  this.begin = function (fn) {
+    this.on('begin', fn)
+  }
 
-  this.done = function(fn) {
-    this.on("done", fn);
-  };
+  this.done = function (fn) {
+    this.on('done', fn)
+  }
 
-  this.testStart = function(fn) {
-    this.on("testStart", fn);
-  };
+  this.testStart = function (fn) {
+    this.on('testStart', fn)
+  }
 
-  this.testDone = function(fn) {
-    this.on("testDone", fn);
-  };
+  this.testDone = function (fn) {
+    this.on('testDone', fn)
+  }
 
-  this.log = function(fn) {
-    this.on("log", fn);
-  };
+  this.log = function (fn) {
+    this.on('log', fn)
+  }
 
-  this.load = function() {
+  this.load = function () {
     // NOOP
-  };
+  }
 
-  this.start = function() {
+  this.start = function () {
     // NOOP
-  };
-};
+  }
+}
