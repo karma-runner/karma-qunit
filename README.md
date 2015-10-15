@@ -34,6 +34,38 @@ module.exports = function (config) {
 }
 ```
 
+### Running a single test module or test case
+
+`karma-qunit` supports running a single test module or test case within a module by using Karma client config.  To use this functionality you will need to make some changes to your `karma.conf.js`:
+
+```js
+// karma.conf.js
+var filter;
+var dashDashIndex = process.argv.indexOf('--');
+if (dashDashIndex !== -1) {
+    filter = process.argv.slice(dashDashIndex + 1).join(' ');
+}
+
+module.exports = function (config) {
+    // ...
+    client: {
+        filter: (filter ? [filter] : undefined)
+    }
+}
+```
+
+Filter string is of the form "module name: test case", for example:
+
+```bash
+# run tests in just myTestModule
+$ karma start -- myTestModule
+
+# run just one test in myTestModule
+$ karma start -- myTestModule: testSomething
+```
+
+Note that this uses a prefix string match, so with appropriately named modules you could even use this to run a subset of test modules if they start with the same prefix.
+
 ----
 
 For more information on Karma see the [homepage]. If you're using `karma-qunit` to test Ember.js, you might find Karma's [Ember guide](http://karma-runner.github.io/0.12/plus/emberjs.html) helpful.
