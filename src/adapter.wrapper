@@ -10,5 +10,9 @@ if (window.removeEventListener) {
   window.detachEvent('onload', window.QUnit.load);
 }
 
+if (window.__karma__.config.filter && window.__karma__.config.filter.length) {
+  window.QUnit.config.filter = window.__karma__.config.filter[0].toLowerCase();
+}
+
 window.__karma__.start = createQUnitStartFn(window.__karma__);
 })(window);
