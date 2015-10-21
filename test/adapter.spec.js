@@ -1,10 +1,46 @@
-/* global MockSocket, MockRunner, createQUnitStartFn, reporter:true */
+/* global MockSocket, MockRunner, createQUnitStartFn, createQUnitConfig reporter:true */
 
 // Tests for adapter/qunit.src.js
 // These tests are executed in browser.
 
 describe('adapter qunit', function () {
   var Karma = window.__karma__.constructor
+
+  describe('config', function () {
+    var config
+    var tc
+
+    beforeEach(function () {
+      tc = new Karma(new MockSocket(), null, null, null, {search: ''})
+    })
+
+    it('should return the default configuration passed', function () {
+      tc.config.qunit = {}
+      config = createQUnitConfig(tc, {autostart: false})
+      expect(config.autostart).toBe(false)
+    })
+
+    it('should return the configuration defined on the runner', function () {
+      tc.config.qunit = {
+        autostart: false
+      }
+      config = createQUnitConfig(tc)
+      expect(config.autostart).toBe(false)
+    })
+
+    it('should prefer configuration on the runner', function () {
+      tc.config.qunit = {
+        autostart: true
+      }
+      config = createQUnitConfig(tc, {autostart: false})
+      expect(config.autostart).toBe(true)
+    })
+
+    it('should return an empty object for no client config', function () {
+      config = createQUnitConfig(tc)
+      expect(config).toEqual({})
+    })
+  })
 
   describe('reporter', function () {
     var runner

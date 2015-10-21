@@ -2,7 +2,7 @@ function createQUnitConfig (karma, defaultConfig) { // eslint-disable-line no-un
   var config = defaultConfig || {}
 
   if (!karma.config || !karma.config.qunit) {
-    return
+    return {}
   }
 
   for (var key in karma.config.qunit) {
