@@ -42,17 +42,18 @@
   },
   "license": "MIT",
   "contributors": [
+    "Matt DuVall <matt@stripe.com>",
     "Friedel Ziegelmayer <friedel.ziegelmayer@gmail.com>",
-    "Aymeric Beaumet <aymeric@beaumet.me>",
-    "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
-    "Marcin Szczepanski <mszczepanski@atlassian.com>",
-    "Sahat Yalkabov <sakhat@gmail.com>",
-    "Timo Tijhof <krinklemail@gmail.com>",
     "dignifiedquire <dignifiedquire@gmail.com>",
+    "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
+    "Aymeric Beaumet <aymeric@beaumet.me>",
+    "Timo Tijhof <krinklemail@gmail.com>",
     "Aymeric Beaumet <aymeric.beaumet@gmail.com>",
     "thenickcox <nick@nickcox.me>",
     "Brian Donovan <donovan@squareup.com>",
     "Daniel Herman <daniel.c.herman@gmail.com>",
-    "Kristof Neirynck <k.neirynck@gmail.com>"
+    "Kristof Neirynck <k.neirynck@gmail.com>",
+    "Marcin Szczepanski <mszczepanski@atlassian.com>",
+    "Sahat Yalkabov <sakhat@gmail.com>"
   ]
 }
