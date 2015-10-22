@@ -1,3 +1,17 @@
+function createQUnitConfig (karma, defaultConfig) { // eslint-disable-line no-unused-vars
+  var config = defaultConfig || {}
+
+  if (!karma.config || !karma.config.qunit) {
+    return {}
+  }
+
+  for (var key in karma.config.qunit) {
+    config[key] = karma.config.qunit[key]
+  }
+
+  return config
+}
+
 function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unused-vars
   return function () {
     var FIXTURE_ID = 'qunit-fixture'

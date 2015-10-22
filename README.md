@@ -34,6 +34,28 @@ module.exports = function (config) {
 }
 ```
 
+You can also pass options for `QUnit.config` (documented [here](https://api.qunitjs.com/QUnit.config/)) as such:
+
+```js
+/// karma.conf.js
+module.exports = function (config) {
+  config.set({
+    frameworks: ['qunit'],
+    plugins: ['karma-qunit'],
+    files: [
+      '*.js'
+    ],
+
+    // client configuration
+    client: {
+      qunit: {
+        testTimeout: 5000
+      }
+    }
+  })
+}
+```
+
 ----
 
 For more information on Karma see the [homepage]. If you're using `karma-qunit` to test Ember.js, you might find Karma's [Ember guide](http://karma-runner.github.io/0.12/plus/emberjs.html) helpful.

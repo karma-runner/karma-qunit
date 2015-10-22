@@ -2,7 +2,13 @@
 
 %CONTENT%
 
-window.QUnit.config.autostart = false;
+var config = createQUnitConfig(window.__karma__, {
+  autostart: false
+});
+
+for (var key in config) {
+  window.QUnit.config[key] = config[key];
+}
 
 if (window.removeEventListener) {
   window.removeEventListener('load', window.QUnit.load, false);
