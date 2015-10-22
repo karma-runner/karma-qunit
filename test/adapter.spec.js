@@ -36,9 +36,9 @@ describe('adapter qunit', function () {
       expect(config.autostart).toBe(true)
     })
 
-    it('should return an empty object for no client config', function () {
-      config = createQUnitConfig(tc)
-      expect(config).toEqual({})
+    it('should return the default config for no client config', function () {
+      config = createQUnitConfig(tc, {autostart: false})
+      expect(config).toEqual({autostart: false})
     })
   })
 
