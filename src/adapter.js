@@ -45,22 +45,24 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
       timer = new Date().getTime()
       testResult = { success: true, errors: [] }
 
-      // create a qunit-fixture element to match behaviour of regular qunit
-      // runner. The fixture is only removed at the start of a subsequent test
-      // so it can be inspected after a test run.
-      var fixture = document.getElementById(FIXTURE_ID)
-      if (fixture) {
-        fixture.parentNode.removeChild(fixture)
+      if (typeof document !== 'undefined' && document.getElementById && document.createElement && document.body) {
+        // create a qunit-fixture element to match behaviour of regular qunit
+        // runner. The fixture is only removed at the start of a subsequent test
+        // so it can be inspected after a test run.
+        var fixture = document.getElementById(FIXTURE_ID)
+        if (fixture) {
+          fixture.parentNode.removeChild(fixture)
+        }
+        fixture = document.createElement('div')
+        fixture.id = FIXTURE_ID
+        // style to match qunit runner's CSS
+        fixture.style.position = 'absolute'
+        fixture.style.left = '-10000px'
+        fixture.style.top = '-10000px'
+        fixture.style.width = '1000px'
+        fixture.style.height = '1000px'
+        document.body.appendChild(fixture)
       }
-      fixture = document.createElement('div')
-      fixture.id = FIXTURE_ID
-      // style to match qunit runner's CSS
-      fixture.style.position = 'absolute'
-      fixture.style.left = '-10000px'
-      fixture.style.top = '-10000px'
-      fixture.style.width = '1000px'
-      fixture.style.height = '1000px'
-      document.body.appendChild(fixture)
     })
 
     runner.log(function (details) {
