@@ -12,9 +12,9 @@ for (var key in config) {
 
 if (window.removeEventListener) {
   window.removeEventListener('load', window.QUnit.load, false);
-} else {
+} else if (window.detachEvent) {
   window.detachEvent('onload', window.QUnit.load);
 }
 
 window.__karma__.start = createQUnitStartFn(window.__karma__);
-})(window);
+})(typeof window !== 'undefined' ? window : global);
