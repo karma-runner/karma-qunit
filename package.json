@@ -42,11 +42,12 @@
   },
   "license": "MIT",
   "contributors": [
-    "Matt DuVall <matt@stripe.com>",
     "dignifiedquire <dignifiedquire@gmail.com>",
     "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
+    "Matt DuVall <matt@stripe.com>",
     "Friedel Ziegelmayer <friedel.ziegelmayer@gmail.com>",
     "Aymeric Beaumet <aymeric@beaumet.me>",
+    "Stefan Dragnev <dragnev@telerik.com>",
     "Timo Tijhof <krinklemail@gmail.com>",
     "Aymeric Beaumet <aymeric.beaumet@gmail.com>",
     "thenickcox <nick@nickcox.me>",
