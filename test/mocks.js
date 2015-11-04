@@ -54,4 +54,11 @@ var MockRunner = function () { // eslint-disable-line no-unused-vars
   this.start = function () {
     // NOOP
   }
+
+  this.dump = {
+    parse: function (input) {
+      return JSON.stringify(input)
+    }
+  }
+
 }

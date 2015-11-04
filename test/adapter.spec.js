@@ -136,7 +136,7 @@ describe('adapter qunit', function () {
       it('should report failed result', function () {
         spyOn(tc, 'result').and.callFake(function (result) {
           expect(result.success).toBe(false)
-          expect(result.log).toEqual(['Big trouble.\n'])
+          expect(result.log).toEqual(['Big trouble.\nExpected: ' + JSON.stringify(expected) + '\nActual: undefined' + '\n' ])
         })
 
         var mockQUnitResult = {
@@ -145,9 +145,12 @@ describe('adapter qunit', function () {
           name: 'should do something'
         }
 
+        var expected = {foo: 'bar', baz: [1, 2, 3]}
+
         var mockQUnitLog = {
           result: false,
-          message: 'Big trouble.'
+          message: 'Big trouble.',
+          expected: expected
         }
 
         runner.emit('testStart', mockQUnitResult)
