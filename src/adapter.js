@@ -74,7 +74,7 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
         }
 
         if (typeof details.expected !== 'undefined') {
-          msg += 'Expected: ' + details.expected + '\n' + 'Actual: ' + details.actual + '\n'
+          msg += 'Expected: ' + runner.dump.parse(details.expected) + '\n' + 'Actual: ' + runner.dump.parse(details.actual) + '\n'
         }
 
         if (details.source) {
