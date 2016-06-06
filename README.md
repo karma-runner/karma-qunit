@@ -49,6 +49,7 @@ module.exports = function (config) {
     // client configuration
     client: {
       qunit: {
+        showDebugUI: true,
         testTimeout: 5000
       }
     }
