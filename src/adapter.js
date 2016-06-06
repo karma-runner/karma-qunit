@@ -20,9 +20,9 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
     var timer = null
     var testResult = {}
     var supportsTestTracking = false
-    var config = window.karmaQunitConfig || {}
+    var config = tc.config.qunit || {}
 
-    if (config.showDebugUI) {
+    if (config.showUI) {
       var ui = document.createElement('div')
       ui.id = 'qunit'
       document.body.appendChild(ui)

@@ -9,7 +9,6 @@ var config = createQUnitConfig(window.__karma__, {
 for (var key in config) {
   window.QUnit.config[key] = config[key];
 }
-window.karmaQunitConfig = config;
 
 if (window.removeEventListener) {
   window.removeEventListener('load', window.QUnit.load, false);
