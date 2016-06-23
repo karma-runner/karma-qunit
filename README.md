@@ -48,13 +48,17 @@ module.exports = function (config) {
 
     // client configuration
     client: {
+      clearContext: false,
       qunit: {
+        showUI: true,
         testTimeout: 5000
       }
     }
   })
 }
 ```
+
+Note: `showUI: true` needs the `clearContext: false` option to display correctly in non-debug mode. 
 
 ----
 
