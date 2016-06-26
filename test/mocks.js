@@ -60,5 +60,4 @@ var MockRunner = function () { // eslint-disable-line no-unused-vars
       return JSON.stringify(input)
     }
   }
-
 }

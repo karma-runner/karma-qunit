@@ -92,7 +92,6 @@ describe('adapter qunit', function () {
 
         expect(tc.info).toHaveBeenCalled()
       })
-
     })
 
     describe('test start', function () {
@@ -109,7 +108,6 @@ describe('adapter qunit', function () {
         expect(fixture).toBeDefined()
         expect(fixture.className).not.toBe('marker')
       })
-
     })
 
     describe('test end', function () {
@@ -136,7 +134,7 @@ describe('adapter qunit', function () {
       it('should report failed result', function () {
         spyOn(tc, 'result').and.callFake(function (result) {
           expect(result.success).toBe(false)
-          expect(result.log).toEqual(['Big trouble.\nExpected: ' + JSON.stringify(expected) + '\nActual: undefined' + '\n' ])
+          expect(result.log).toEqual(['Big trouble.\nExpected: ' + JSON.stringify(expected) + '\nActual: undefined' + '\n'])
         })
 
         var mockQUnitResult = {
