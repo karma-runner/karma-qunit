@@ -40,7 +40,7 @@
     "qunitjs": "^2.0.0"
   },
   "peerDependencies": {
-    "qunitjs": "^1.14.0"
+    "qunitjs": "^1.14.0 || ^2.0.0"
   },
   "license": "MIT",
   "contributors": [
