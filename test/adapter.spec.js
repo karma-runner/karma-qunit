@@ -15,12 +15,14 @@ describe('adapter qunit', function () {
     })
 
     it('should return the default configuration passed', function () {
+      tc.config = {}
       tc.config.qunit = {}
       config = createQUnitConfig(tc, {autostart: false})
       expect(config.autostart).toBe(false)
     })
 
     it('should return the configuration defined on the runner', function () {
+      tc.config = {}
       tc.config.qunit = {
         autostart: false
       }
@@ -29,6 +31,7 @@ describe('adapter qunit', function () {
     })
 
     it('should prefer configuration on the runner', function () {
+      tc.config = {}
       tc.config.qunit = {
         autostart: true
       }
@@ -55,8 +58,10 @@ describe('adapter qunit', function () {
     describe('done', function () {
       it('should report complete', function () {
         spyOn(tc, 'complete')
+        spyOn(tc, 'info')
 
         runner.emit('done')
+        expect(tc.info).toHaveBeenCalled()
         expect(tc.complete).toHaveBeenCalled()
       })
     })
@@ -76,9 +81,12 @@ describe('adapter qunit', function () {
       })
 
       it('should use our own tracking if none is available', function () {
-        spyOn(tc, 'info').and.callFake(function (result) {
-          expect(result.total).toBe(1)
+        spyOn(tc, 'result').and.callFake(function (result) {
+          expect(result.description).toBe('should do something')
         })
+
+        spyOn(tc, 'info')
+        spyOn(tc, 'complete')
 
         var mockQUnitResult = {
           name: 'should do something',
@@ -90,7 +98,9 @@ describe('adapter qunit', function () {
         runner.emit('testDone', mockQUnitResult)
         runner.emit('done')
 
+        expect(tc.result).toHaveBeenCalled()
         expect(tc.info).toHaveBeenCalled()
+        expect(tc.complete).toHaveBeenCalled()
       })
     })
 
