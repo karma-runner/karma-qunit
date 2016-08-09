@@ -20,7 +20,7 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
     var timer = null
     var testResult = {}
     var supportsTestTracking = false
-    var config = tc.config.qunit || {}
+    var config = (tc.config && tc.config.qunit) || {}
 
     if (config.showUI) {
       var ui = document.createElement('div')
