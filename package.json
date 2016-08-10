@@ -44,14 +44,14 @@
   },
   "license": "MIT",
   "contributors": [
-    "dignifiedquire <dignifiedquire@gmail.com>",
     "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
+    "dignifiedquire <dignifiedquire@gmail.com>",
     "Matt DuVall <matt@stripe.com>",
     "Mark Ethan Trostler <mark@zzo.com>",
     "Stefan Sechelmann <stefan@sechel.de>",
     "Friedel Ziegelmayer <friedel.ziegelmayer@gmail.com>",
+    "masubi <justin.masui@gmail.com>",
     "Aymeric Beaumet <aymeric@beaumet.me>",
-    "Timo Tijhof <krinklemail@gmail.com>",
     "Aymeric Beaumet <aymeric.beaumet@gmail.com>",
     "thenickcox <nick@nickcox.me>",
     "Brian Donovan <donovan@squareup.com>",
@@ -60,6 +60,7 @@
     "Marcin Szczepanski <mszczepanski@atlassian.com>",
     "Sahat Yalkabov <sakhat@gmail.com>",
     "Stefan Dragnev <dragnev@telerik.com>",
-    "Tim Robertson <trobertson@spredfast.com>"
+    "Tim Robertson <trobertson@spredfast.com>",
+    "Timo Tijhof <krinklemail@gmail.com>"
   ]
 }
