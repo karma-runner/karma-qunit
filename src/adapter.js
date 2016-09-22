@@ -103,7 +103,7 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
         time: new Date().getTime() - timer
       }
 
-      if (result.description === 'global failure') {
+      if (result.description.indexOf('global failure') !== -1) {
         return
       }
 
