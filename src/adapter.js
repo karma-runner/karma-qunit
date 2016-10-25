@@ -112,7 +112,7 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
 
     runner.load()
 
-    if (!window.QUnit.config || window.QUnit.config.autostart !== false) {
+    if (!window.QUnit || !window.QUnit.config || window.QUnit.config.autostart !== false) {
       runner.start()
     }
   }
