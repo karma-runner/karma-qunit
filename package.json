@@ -31,7 +31,7 @@
     "grunt-eslint": "^18.1.0",
     "grunt-karma": "2.x",
     "grunt-npm": "0.0.2",
-    "jasmine-core": "^2.3.4",
+    "jasmine-core": "^2.6.2",
     "karma": "1.x || ^0.13.3",
     "karma-chrome-launcher": "1.x || ^0.2.0",
     "karma-firefox-launcher": "1.x || ^0.1.6",
