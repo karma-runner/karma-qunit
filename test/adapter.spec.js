@@ -105,18 +105,35 @@ describe('adapter qunit', function () {
     })
 
     describe('test start', function () {
-      it('should create a qunit-fixture element, and remove if exists', function () {
-        runner.emit('testStart', {})
-
+      it('should create a qunit-fixture element if none exists', function () {
         var fixture = document.getElementById('qunit-fixture')
-        expect(fixture).toBeDefined()
+        if (fixture) {
+          fixture.parentNode.removeChild(fixture)
+          fixture = document.getElementById('qunit-fixture')
+        }
+        expect(fixture).toBe(null)
 
-        fixture.className = 'marker'
+        runner.emit('begin', {})
         runner.emit('testStart', {})
 
         fixture = document.getElementById('qunit-fixture')
         expect(fixture).toBeDefined()
-        expect(fixture.className).not.toBe('marker')
+      })
+
+      it('should preserve any existing qunit-fixture element', function () {
+        var fixture = document.getElementById('qunit-fixture')
+        if (!fixture) {
+          fixture = document.createElement('div')
+          fixture.id = 'qunit-fixture'
+          document.body.appendChild(fixture)
+        }
+        fixture.className = 'marker'
+
+        runner.emit('begin', {})
+        runner.emit('testStart', {})
+
+        fixture = document.getElementById('qunit-fixture')
+        expect(fixture.className).toBe('marker')
       })
     })
 
