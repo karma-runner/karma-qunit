@@ -111,6 +111,9 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
     })
 
     runner.load()
-    runner.start()
+    // honor autostart config, useful for tests loaded asynchronously
+    if (config.autostart !== false) {
+      runner.start()
+    }
   }
 }
