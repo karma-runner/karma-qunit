@@ -1,3 +1,5 @@
+'use strict'
+
 function createQUnitConfig (karma, defaultConfig) { // eslint-disable-line no-unused-vars
   var config = defaultConfig || {}
 
@@ -95,7 +97,7 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
     runner.testDone(function (test) {
       var result = {
         description: test.name,
-        suite: test.module && [test.module] || [],
+        suite: (test.module && [test.module]) || [],
         success: testResult.success,
         skipped: test.skipped,
         log: testResult.errors || [],
@@ -110,7 +112,7 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
     })
 
     runner.load()
-    
+
     // honor autostart config, useful for tests loaded asynchronously
     if (config.autostart !== false) {
       runner.start()
