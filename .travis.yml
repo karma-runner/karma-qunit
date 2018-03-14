@@ -2,11 +2,27 @@ language: node_js
 node_js:
   - "4"
   - "6"
-  - "7"
+  - "8"
+  - stable
 
-# Make sure we have new NPM.
 before_install:
+  - npm config set loglevel warn
+  - g++-4.8 --version
+  - if [[ "`node --version`" = v4* ]]; then npm install -g npm@latest-3; fi
+
+addons:
+  firefox:
+    "latest"
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - npm install -g npm
-  - npm config set loglevel warn
+
+script:
+  - yarn lint
+  - yarn test
