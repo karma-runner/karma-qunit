@@ -45,6 +45,37 @@ describe('adapter qunit', function () {
     })
   })
 
+  describe('runner', function () {
+    var tc
+    var runner
+
+    beforeEach(function () {
+      tc = new Karma(new MockSocket(), null, null, null, {search: ''})
+      runner = new MockRunner()
+    })
+
+    describe('start', function () {
+      it('should auto start on __karma__.start by default', function () {
+        spyOn(runner, 'start')
+
+        createQUnitStartFn(tc, runner)()
+        expect(runner.start).toHaveBeenCalled()
+      })
+
+      it('should honor runner config "autostart"', function () {
+        tc.config = {}
+        tc.config.qunit = {
+          autostart: false
+        }
+
+        spyOn(runner, 'start')
+
+        createQUnitStartFn(tc, runner)()
+        expect(runner.start).not.toHaveBeenCalled()
+      })
+    })
+  })
+
   describe('reporter', function () {
     var runner
     var tc
