@@ -26,3 +26,4 @@ before_script:
 script:
   - yarn lint
   - yarn test
+  - npm run test:lib
