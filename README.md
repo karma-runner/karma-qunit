@@ -34,7 +34,7 @@ module.exports = function (config) {
 }
 ```
 
-You can also pass options for `QUnit.config` (documented [here](https://api.qunitjs.com/QUnit.config/)) as such:
+You can also pass options for `QUnit.config` (documented [here](https://api.qunitjs.com/config/QUnit.config)) as such:
 
 ```js
 /// karma.conf.js
@@ -58,10 +58,10 @@ module.exports = function (config) {
 }
 ```
 
-Note: `showUI: true` needs the `clearContext: false` option to display correctly in non-debug mode. 
+Note: `showUI: true` needs the `clearContext: false` option to display correctly in non-debug mode.
 
 ----
 
-For more information on Karma see the [homepage]. If you're using `karma-qunit` to test Ember.js, you might find Karma's [Ember guide](http://karma-runner.github.io/0.12/plus/emberjs.html) helpful.
+For more information on Karma see the [homepage]. If you're using `karma-qunit` to test Ember.js, you might find Karma's [Ember guide](http://karma-runner.github.io/latest/plus/emberjs.html) helpful.
 
 [homepage]: http://karma-runner.github.com
