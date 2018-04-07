@@ -27,6 +27,8 @@ var MockSocket = Emitter // eslint-disable-line no-unused-vars
 var MockRunner = function () { // eslint-disable-line no-unused-vars
   Emitter.call(this)
 
+  this.config = {}
+
   this.begin = function (fn) {
     this.on('begin', fn)
   }
