@@ -6,6 +6,13 @@
 describe('adapter qunit', function () {
   var Karma = window.__karma__.constructor
 
+  afterEach(function () {
+    var fixture = document.getElementById('qunit-fixture')
+    if (fixture) {
+      fixture.parentNode.removeChild(fixture)
+    }
+  })
+
   describe('config', function () {
     var config
     var tc
@@ -138,10 +145,6 @@ describe('adapter qunit', function () {
     describe('test start', function () {
       it('should create a qunit-fixture element if none exists', function () {
         var fixture = document.getElementById('qunit-fixture')
-        if (fixture) {
-          fixture.parentNode.removeChild(fixture)
-          fixture = document.getElementById('qunit-fixture')
-        }
         expect(fixture).toBe(null)
 
         runner.emit('begin', {})
@@ -149,22 +152,32 @@ describe('adapter qunit', function () {
 
         fixture = document.getElementById('qunit-fixture')
         expect(fixture).toBeDefined()
+        expect(runner.config.fixture).toBe('')
       })
 
       it('should preserve any existing qunit-fixture element', function () {
-        var fixture = document.getElementById('qunit-fixture')
-        if (!fixture) {
-          fixture = document.createElement('div')
-          fixture.id = 'qunit-fixture'
-          document.body.appendChild(fixture)
-        }
+        var fixture = document.createElement('div')
+        fixture.id = 'qunit-fixture'
         fixture.className = 'marker'
+        document.body.appendChild(fixture)
 
         runner.emit('begin', {})
         runner.emit('testStart', {})
 
         fixture = document.getElementById('qunit-fixture')
+        expect(fixture).toBeDefined()
         expect(fixture.className).toBe('marker')
+        expect(runner.config.fixture).toBeUndefined()
+      })
+
+      it('should honor runner config "fixture"', function () {
+        runner.config.fixture = '<div>html fixture</div>'
+        runner.emit('begin', {})
+        runner.emit('testStart', {})
+
+        var fixture = document.getElementById('qunit-fixture')
+        expect(fixture).toBeDefined()
+        expect(runner.config.fixture).toBe('<div>html fixture</div>')
       })
     })
 

@@ -52,6 +52,9 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
             fixture.style.width = '1000px'
             fixture.style.height = '1000px'
             document.body.appendChild(fixture)
+            if (typeof runner.config.fixture === 'undefined') {
+              runner.config.fixture = ''
+            }
           }
         }
       })
