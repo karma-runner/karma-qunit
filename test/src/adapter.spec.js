@@ -55,14 +55,17 @@ describe('adapter qunit', function () {
     })
 
     describe('start', function () {
-      it('should auto start on __karma__.start by default', function () {
+      it('should auto start on __karma__.start by default', function (done) {
         spyOn(runner, 'start')
 
         createQUnitStartFn(tc, runner)()
-        expect(runner.start).toHaveBeenCalled()
+        setTimeout(function () {
+          expect(runner.start).toHaveBeenCalled()
+          done()
+        }, 13)
       })
 
-      it('should honor runner config "autostart"', function () {
+      it('should honor runner config "autostart"', function (done) {
         tc.config = {}
         tc.config.qunit = {
           autostart: false
@@ -71,7 +74,10 @@ describe('adapter qunit', function () {
         spyOn(runner, 'start')
 
         createQUnitStartFn(tc, runner)()
-        expect(runner.start).not.toHaveBeenCalled()
+        setTimeout(function () {
+          expect(runner.start).not.toHaveBeenCalled()
+          done()
+        }, 13)
       })
     })
   })
