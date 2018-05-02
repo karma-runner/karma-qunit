@@ -23,6 +23,7 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
     var testResult = {}
     var supportsTestTracking = false
     var config = (tc.config && tc.config.qunit) || {}
+    var qunitOldTimeout = 13
 
     if (config.showUI) {
       var ui = document.createElement('div')
@@ -118,7 +119,9 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
 
     // honor autostart config, useful for tests loaded asynchronously
     if (config.autostart !== false) {
-      runner.start()
+      setTimeout(function () {
+        runner.start()
+      }, qunitOldTimeout)
     }
   }
 }
