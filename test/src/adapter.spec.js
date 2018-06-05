@@ -148,16 +148,15 @@ describe('adapter qunit', function () {
       })
     })
 
-    describe('test start', function () {
+    describe('test begin', function () {
       it('should create a qunit-fixture element if none exists', function () {
         var fixture = document.getElementById('qunit-fixture')
         expect(fixture).toBe(null)
 
         runner.emit('begin', {})
-        runner.emit('testStart', {})
 
         fixture = document.getElementById('qunit-fixture')
-        expect(fixture).toBeDefined()
+        expect(fixture).not.toBe(null)
         expect(runner.config.fixture).toBe('')
       })
 
@@ -168,10 +167,9 @@ describe('adapter qunit', function () {
         document.body.appendChild(fixture)
 
         runner.emit('begin', {})
-        runner.emit('testStart', {})
 
         fixture = document.getElementById('qunit-fixture')
-        expect(fixture).toBeDefined()
+        expect(fixture).not.toBe(null)
         expect(fixture.className).toBe('marker')
         expect(runner.config.fixture).toBeUndefined()
       })
@@ -179,10 +177,9 @@ describe('adapter qunit', function () {
       it('should honor runner config "fixture"', function () {
         runner.config.fixture = '<div>html fixture</div>'
         runner.emit('begin', {})
-        runner.emit('testStart', {})
 
         var fixture = document.getElementById('qunit-fixture')
-        expect(fixture).toBeDefined()
+        expect(fixture).not.toBe(null)
         expect(runner.config.fixture).toBe('<div>html fixture</div>')
       })
     })
