@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "grunt eslint",
-    "test": "grunt && mocha test/lib",
+    "test": "grunt",
     "test:lib": "mocha test/lib"
   },
   "repository": {
