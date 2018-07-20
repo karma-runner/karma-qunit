@@ -46,12 +46,6 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
           if (!fixture) {
             fixture = document.createElement('div')
             fixture.id = FIXTURE_ID
-            // style to match qunit runner's CSS
-            fixture.style.position = 'absolute'
-            fixture.style.left = '-10000px'
-            fixture.style.top = '-10000px'
-            fixture.style.width = '1000px'
-            fixture.style.height = '1000px'
             document.body.appendChild(fixture)
             if (typeof runner.config.fixture === 'undefined') {
               runner.config.fixture = ''

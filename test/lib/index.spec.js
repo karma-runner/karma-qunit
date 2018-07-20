@@ -8,23 +8,21 @@ describe('framework:qunit', function () {
     files = []
   })
 
-  it('should add adapter.js', function () {
+  it('should add qunit.css', function () {
     initQunit(files)
 
-    expect(files[1].pattern).to.contain('adapter.js')
+    expect(files[0].pattern).to.contain('qunit.css')
   })
 
   it('should add qunit.js', function () {
     initQunit(files)
 
-    expect(files[0].pattern).to.contain('qunit.js')
+    expect(files[1].pattern).to.contain('qunit.js')
   })
 
-  it('should add qunit.css if we define showUI in config', function () {
-    var qunitConfig = {showUI: true}
+  it('should add adapter.js', function () {
+    initQunit(files)
 
-    initQunit(files, qunitConfig)
-
-    expect(files[0].pattern).to.contain('qunit.css')
+    expect(files[2].pattern).to.contain('adapter.js')
   })
 })
