@@ -52,13 +52,16 @@ module.exports = function (config) {
       qunit: {
         showUI: true,
         testTimeout: 5000
+        QUnitJS: true
       }
     }
   })
 }
 ```
 
-Note: `showUI: true` needs the `clearContext: false` option to display correctly in non-debug mode.
+Notes: 
+ - `showUI: true` needs the `clearContext: false` option to display correctly in non-debug mode.
+ - `QUnitJS` will look for the old QUnit package which is `qunitjs`
 
 ----
 

@@ -1,3 +1,7 @@
 {
+  "env": {
+    "jquery": true,
+    "qunit": true
+  },
   "extends": "standard"
 }

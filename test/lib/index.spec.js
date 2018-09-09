@@ -25,4 +25,12 @@ describe('framework:qunit', function () {
 
     expect(files[2].pattern).to.contain('adapter.js')
   })
+
+  it('should use old qunit package', function () {
+    initQunit(files, {
+      QUnitJS: true
+    })
+
+    expect(files[1].pattern).to.contain('qunitjs')
+  })
 })

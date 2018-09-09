@@ -27,6 +27,9 @@ module.exports = function (grunt) {
       },
       simplequnit: {
         configFile: 'examples/simple/karma.conf.js'
+      },
+      qunitjs: {
+        configFile: 'examples/qunitjs/karma.conf.js'
       }
     },
     eslint: {

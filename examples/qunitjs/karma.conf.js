@@ -26,6 +26,11 @@ module.exports = function (config) {
     plugins: [
       require('../../lib/index.js'),
       'karma-chrome-launcher'
-    ]
+    ],
+    client: {
+      qunit: {
+        QUnitJS: true
+      }
+    }
   })
 }
