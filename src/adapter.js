@@ -100,7 +100,7 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
         suite: (test.module && [test.module]) || [],
         success: testResult.success,
         skipped: test.skipped,
-        log: testResult.errors || [],
+        log: testResult.errors,
         time: new Date().getTime() - timer
       }
 
