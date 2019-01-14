@@ -20,7 +20,9 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
     var runner = runnerPassedIn || window.QUnit
     var totalNumberOfTest = 0
     var timer = null
-    var testResult = {}
+    var testResult = {
+      errors: []
+    }
     var supportsTestTracking = false
     var config = (tc.config && tc.config.qunit) || {}
     var qunitOldTimeout = 13
@@ -88,9 +90,6 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
         }
 
         testResult.success = false
-        if (!testResult.errors) {
-          testResult.errors = []
-        }
         testResult.errors.push(msg)
       }
     })
