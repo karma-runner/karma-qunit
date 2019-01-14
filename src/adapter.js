@@ -88,6 +88,9 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
         }
 
         testResult.success = false
+        if (!testResult.errors) {
+          testResult.errors = []
+        }
         testResult.errors.push(msg)
       }
     })
