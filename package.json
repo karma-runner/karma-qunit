@@ -23,7 +23,7 @@
     "qunit"
   ],
   "files": [
-    "lib"
+    "lib/*.js"
   ],
   "author": "Vojta Jina <vojta.jina@gmail.com>",
   "dependencies": {},
