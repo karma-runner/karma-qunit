@@ -12,6 +12,10 @@
     "type": "git",
     "url": "git://github.com/karma-runner/karma-qunit.git"
   },
+  "bugs": {
+    "url": "https://github.com/karma-runner/karma-qunit/issues"
+  },
+  "homepage": "https://github.com/karma-runner/karma-qunit#readme",
   "keywords": [
     "karma",
     "karma-plugin",
@@ -19,7 +23,7 @@
     "qunit"
   ],
   "files": [
-    "lib"
+    "lib/*.js"
   ],
   "author": "Vojta Jina <vojta.jina@gmail.com>",
   "dependencies": {},
@@ -46,6 +50,7 @@
     "qunit": "^2.5.1"
   },
   "peerDependencies": {
+    "karma": "^3.0.0",
     "qunit": "^2.0.0"
   },
   "license": "MIT",
