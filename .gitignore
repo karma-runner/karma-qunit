@@ -1,3 +1,4 @@
-lib/adapter.js
-node_modules
 *.log
+/node_modules/
+/lib/adapter.js
+/package-lock.json
