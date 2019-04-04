@@ -3,6 +3,10 @@
     "jasmine": true
   },
   "rules": {
-    "no-unused-vars": [2, {"vars": "local"}]
+    "no-unused-vars": [
+      2, {
+        "vars": "local"
+      }
+    ]
   }
 }

@@ -18,13 +18,13 @@ describe('adapter qunit', function () {
     var tc
 
     beforeEach(function () {
-      tc = new Karma(new MockSocket(), null, null, null, {search: ''})
+      tc = new Karma(new MockSocket(), null, null, null, { search: '' })
     })
 
     it('should return the default configuration passed', function () {
       tc.config = {}
       tc.config.qunit = {}
-      config = createQUnitConfig(tc, {autostart: false})
+      config = createQUnitConfig(tc, { autostart: false })
       expect(config.autostart).toBe(false)
     })
 
@@ -42,13 +42,13 @@ describe('adapter qunit', function () {
       tc.config.qunit = {
         autostart: true
       }
-      config = createQUnitConfig(tc, {autostart: false})
+      config = createQUnitConfig(tc, { autostart: false })
       expect(config.autostart).toBe(true)
     })
 
     it('should return the default config for no client config', function () {
-      config = createQUnitConfig(tc, {autostart: false})
-      expect(config).toEqual({autostart: false})
+      config = createQUnitConfig(tc, { autostart: false })
+      expect(config).toEqual({ autostart: false })
     })
   })
 
@@ -57,7 +57,7 @@ describe('adapter qunit', function () {
     var runner
 
     beforeEach(function () {
-      tc = new Karma(new MockSocket(), null, null, null, {search: ''})
+      tc = new Karma(new MockSocket(), null, null, null, { search: '' })
       runner = new MockRunner()
     })
 
@@ -94,7 +94,7 @@ describe('adapter qunit', function () {
     var tc
 
     beforeEach(function () {
-      tc = new Karma(new MockSocket(), null, null, null, {search: ''})
+      tc = new Karma(new MockSocket(), null, null, null, { search: '' })
       runner = new MockRunner()
       reporter = new (createQUnitStartFn(tc, runner))()
     })
@@ -217,7 +217,10 @@ describe('adapter qunit', function () {
           name: 'should do something'
         }
 
-        var expected = {foo: 'bar', baz: [1, 2, 3]}
+        var expected = {
+          foo: 'bar',
+          baz: [1, 2, 3]
+        }
 
         var mockQUnitLog = {
           result: false,
