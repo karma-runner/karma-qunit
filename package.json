@@ -4,8 +4,12 @@
   "description": "A Karma plugin. Adapter for QUnit testing framework.",
   "main": "lib/index.js",
   "scripts": {
-    "lint": "grunt eslint",
-    "test": "grunt && mocha test/lib"
+    "lint": "eslint .",
+    "mocha": "mocha test/lib",
+    "karma": "npm run karma:adapter && npm run karma:simple",
+    "karma:adapter": "karma start karma.conf.js",
+    "karma:simple": "karma start examples/simple/karma.conf.js",
+    "test": "npm run lint && grunt && npm run karma && npm run mocha"
   },
   "repository": {
     "type": "git",
@@ -28,6 +32,7 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^6.0.1",
     "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-node": "^9.1.0",
@@ -35,15 +40,12 @@
     "eslint-plugin-standard": "^4.0.0",
     "grunt": "^1.0.4",
     "grunt-bump": "^0.8.0",
-    "grunt-eslint": "^22.0.0",
-    "grunt-karma": "^3.0.2",
     "grunt-npm": "0.0.2",
     "jasmine-core": "^3.4.0",
     "karma": "^4.2.0",
     "karma-chrome-launcher": "^3.0.0",
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "^2.0.1",
-    "load-grunt-tasks": "^5.0.0",
     "mocha": "^6.1.4",
     "qunit": "^2.9.2"
   },

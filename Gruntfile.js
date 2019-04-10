@@ -16,35 +16,15 @@ module.exports = function (grunt) {
           'package.json'
         ]
       }
-    },
-    karma: {
-      options: {
-        singleRun: true
-      },
-      adapter: {
-        configFile: 'karma.conf.js'
-      },
-      simplequnit: {
-        configFile: 'examples/simple/karma.conf.js'
-      }
-    },
-    eslint: {
-      target: [
-        'src/adapter.js',
-        'lib/index.js',
-        'test/**/*.js',
-        'examples/**/*.js',
-        'gruntfile.js',
-        'karma.conf.js'
-      ]
     }
   })
 
-  require('load-grunt-tasks')(grunt)
+  grunt.loadNpmTasks('grunt-bump')
+  grunt.loadNpmTasks('grunt-npm')
   grunt.loadTasks('tasks')
 
-  grunt.registerTask('test', ['eslint', 'build', 'karma'])
-  grunt.registerTask('default', ['test'])
+  grunt.registerTask('test', ['build'])
+  grunt.registerTask('default', 'test')
 
   grunt.registerTask('release', 'Bump the version and publish to NPM.', function (type) {
     grunt.task.run([
