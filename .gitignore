@@ -1,4 +1,3 @@
 *.log
 /node_modules/
 /lib/adapter.js
-/package-lock.json
