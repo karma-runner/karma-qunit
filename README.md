@@ -3,7 +3,7 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/karma-runner/karma-qunit)
  [![npm version](https://img.shields.io/npm/v/karma-qunit.svg?style=flat-square)](https://www.npmjs.com/package/karma-qunit) [![npm downloads](https://img.shields.io/npm/dm/karma-qunit.svg?style=flat-square)](https://www.npmjs.com/package/karma-qunit)
 
-[![Build Status](https://img.shields.io/travis/karma-runner/karma-qunit/master.svg?style=flat-square)](https://travis-ci.org/karma-runner/karma-qunit) [![Dependency Status](https://img.shields.io/david/karma-runner/karma-qunit.svg?style=flat-square)](https://david-dm.org/karma-runner/karma-qunit) [![devDependency Status](https://img.shields.io/david/dev/karma-runner/karma-qunit.svg?style=flat-square)](https://david-dm.org/karma-runner/karma-qunit?type=dev)
+[![Build Status](https://img.shields.io/travis/karma-runner/karma-qunit/master.svg?style=flat-square)](https://travis-ci.org/karma-runner/karma-qunit) [![peerDependencies Status](https://img.shields.io/david/peer/karma-runner/karma-qunit.svg?style=flat-square)](https://david-dm.org/karma-runner/karma-qunit?type=peer) [![devDependency Status](https://img.shields.io/david/dev/karma-runner/karma-qunit.svg?style=flat-square)](https://david-dm.org/karma-runner/karma-qunit?type=dev)
 
 > Adapter for the [QUnit](https://qunitjs.com/) testing framework.
 
