@@ -48,7 +48,7 @@
     "qunit": "^2.9.2"
   },
   "peerDependencies": {
-    "karma": "^4.0.0",
+    "karma": "^4.0.0 || ^5.0.0",
     "qunit": "^2.0.0"
   },
   "license": "MIT",
