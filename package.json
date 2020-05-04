@@ -53,8 +53,8 @@
   },
   "license": "MIT",
   "contributors": [
-    "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
     "XhmikosR <xhmikosr@gmail.com>",
+    "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
     "dignifiedquire <dignifiedquire@gmail.com>",
     "johnjbarton <johnjbarton@johnjbarton.com>",
     "Matt DuVall <matt@stripe.com>",
@@ -66,6 +66,7 @@
     "masubi <justin.masui@gmail.com>",
     "Aymeric Beaumet <aymeric@beaumet.me>",
     "Ulrich Block <u.block@sap.com>",
+    "dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
     "masubi <masubi@users.noreply.github.com>",
     "Aliaksei Sapach <aliaksei.dreamsonic@gmail.com>",
     "Aliaksei Sapach <dreamsonic@tut.by>",
@@ -78,7 +79,6 @@
     "Stefan Dragnev <dragnev@telerik.com>",
     "Tim Robertson <trobertson@spredfast.com>",
     "Volker Buzek <volker.buzek@js-soft.com>",
-    "dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
     "pallxk <github@pallxk.com>",
     "thenickcox <nick@nickcox.me>"
   ]
