@@ -17,7 +17,7 @@ module.exports = function (config) {
 
     autoWatch: false,
 
-    browsers: ['Chrome'],
+    browsers: process.env.CI ? ['ChromeHeadless'] : ['Chrome'],
 
     singleRun: false,
 
