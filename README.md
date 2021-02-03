@@ -1,9 +1,6 @@
 # karma-qunit
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/karma-runner/karma-qunit)
- [![npm version](https://img.shields.io/npm/v/karma-qunit.svg?style=flat-square)](https://www.npmjs.com/package/karma-qunit) [![npm downloads](https://img.shields.io/npm/dm/karma-qunit.svg?style=flat-square)](https://www.npmjs.com/package/karma-qunit)
-
-[![Build Status](https://img.shields.io/github/workflow/status/karma-runner/karma-qunit/Tests/master?style=flat-square)](https://github.com/karma-runner/karma-qunit/actions?workflow=Tests)
+[![npm version](https://img.shields.io/npm/v/karma-qunit.svg?style=flat-square)](https://www.npmjs.com/package/karma-qunit) [![Build Status](https://img.shields.io/github/workflow/status/karma-runner/karma-qunit/Tests/master?style=flat-square)](https://github.com/karma-runner/karma-qunit/actions?workflow=Tests) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/karma-runner/karma-qunit) [![npm downloads](https://img.shields.io/npm/dm/karma-qunit.svg?style=flat-square)](https://www.npmjs.com/package/karma-qunit)
 
 > Adapter for the [QUnit](https://qunitjs.com/) testing framework.
 
@@ -12,14 +9,13 @@
 The easiest way is to keep `karma-qunit` as a devDependency in your `package.json` by running
 
 ```bash
-$ npm install karma-qunit --save-dev
+npm install karma-qunit --save-dev
 ```
 
 ## Configuration
 
 Add `qunit` in the `frameworks` array in your `karma.conf.js` file. Then, in the `plugins`
-array, add `karma-qunit`.
-The following code shows the default configuration:
+array, add `karma-qunit`. The following code shows the default configuration:
 
 ```js
 // karma.conf.js
