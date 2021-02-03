@@ -1,5 +1,4 @@
 module.exports = function (grunt) {
-
   // Build given file - wrap it with a function call
   // TODO(vojta): compile with uglify-js
   grunt.registerMultiTask('build', 'Wrap given file into a function call.', function () {
