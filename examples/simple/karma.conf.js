@@ -17,13 +17,13 @@ module.exports = function (config) {
 
     autoWatch: false,
 
-    browsers: process.env.CI ? ['ChromeHeadless'] : ['Chrome'],
+    browsers: ['FirefoxHeadless'],
 
     singleRun: false,
 
     plugins: [
       require('../../lib/index.js'),
-      'karma-chrome-launcher'
+      'karma-firefox-launcher'
     ]
   })
 }
