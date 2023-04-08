@@ -60,4 +60,4 @@ Note: `showUI: true` needs the `clearContext: false` option to display correctly
 
 For more information on Karma see the [homepage]. If you're using `karma-qunit` to test Ember.js, you might find Karma's [Ember guide](https://karma-runner.github.io/latest/plus/emberjs.html) helpful.
 
-[homepage]: https://karma-runner.github.com/
+[homepage]: https://karma-runner.github.io/
