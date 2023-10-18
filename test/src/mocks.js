@@ -49,10 +49,6 @@ var MockRunner = function () { // eslint-disable-line no-unused-vars
     this.on('log', fn)
   }
 
-  this.load = function () {
-    // NOOP
-  }
-
   this.start = function () {
     // NOOP
   }

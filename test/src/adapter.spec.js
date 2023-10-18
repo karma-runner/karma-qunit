@@ -24,7 +24,7 @@ describe('adapter qunit', function () {
     it('should return the default configuration passed', function () {
       tc.config = {}
       tc.config.qunit = {}
-      config = createQUnitConfig(tc, { autostart: false })
+      config = createQUnitConfig(tc)
       expect(config.autostart).toBe(false)
     })
 
@@ -42,12 +42,12 @@ describe('adapter qunit', function () {
       tc.config.qunit = {
         autostart: true
       }
-      config = createQUnitConfig(tc, { autostart: false })
+      config = createQUnitConfig(tc)
       expect(config.autostart).toBe(true)
     })
 
     it('should return the default config for no client config', function () {
-      config = createQUnitConfig(tc, { autostart: false })
+      config = createQUnitConfig(tc)
       expect(config).toEqual({ autostart: false })
     })
   })

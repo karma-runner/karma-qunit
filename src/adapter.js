@@ -1,14 +1,14 @@
 'use strict'
 
-function createQUnitConfig (karma, defaultConfig) { // eslint-disable-line no-unused-vars
-  var config = defaultConfig || {}
-
-  if (!karma.config || !karma.config.qunit) {
-    return config
+function createQUnitConfig (karma) { // eslint-disable-line no-unused-vars
+  var config = {
+    autostart: false
   }
 
-  for (var key in karma.config.qunit) {
-    config[key] = karma.config.qunit[key]
+  if (karma.config && karma.config.qunit) {
+    for (var key in karma.config.qunit) {
+      config[key] = karma.config.qunit[key]
+    }
   }
 
   return config
@@ -111,9 +111,17 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
       tc.result(result)
     })
 
-    runner.load()
-
-    // honor autostart config, useful for tests loaded asynchronously
+    // karma-qunit uses `QUnit.config.autostart = false` internally
+    // so window.__karma__.start (points to here) controls QUnit.start
+    // and thus naturally waits for any file-loading karma plugins
+    // (especially async like AMD/RequireJS).
+    //
+    // ensure the the option to turn off QUnit autostart is also
+    // available to end-users, by letting them set `qunit.autostart: false`
+    // in karma.config.js. The end-user may then call QUnit.start() when
+    // they are ready.
+    //
+    // https://github.com/karma-runner/karma-qunit/issues/27
     if (config.autostart !== false) {
       setTimeout(function () {
         runner.start()
