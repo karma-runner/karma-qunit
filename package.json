@@ -1,6 +1,6 @@
 {
   "name": "karma-qunit",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "A Karma plugin. Adapter for QUnit testing framework.",
   "main": "lib/index.js",
   "scripts": {
