@@ -1,6 +1,10 @@
 # karma-qunit
 
-[![npm version](https://img.shields.io/npm/v/karma-qunit?style=flat-square&logo=npm&logoColor=fff)](https://www.npmjs.com/package/karma-qunit) [![Build Status](https://img.shields.io/github/actions/workflow/status/karma-runner/karma-qunit/test.yml?style=flat-square&logo=github&branch=master)](https://github.com/karma-runner/karma-qunit/actions/workflows/test.yml?query=workflow%3ATests+branch%3Amaster) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen?style=flat-square)](https://github.com/karma-runner/karma-qunit) [![npm downloads](https://img.shields.io/npm/dm/karma-qunit?style=flat-square)](https://www.npmjs.com/package/karma-qunit)
+[![npm version](https://img.shields.io/npm/v/karma-qunit?style=flat-square&logo=npm&logoColor=fff)](https://www.npmjs.com/package/karma-qunit)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/karma-runner/karma-qunit/test.yml?style=flat-square&logo=github&branch=master)](https://github.com/karma-runner/karma-qunit/actions/workflows/test.yml?query=workflow%3ATests+branch%3Amaster)
+[![Tested with QUnit](https://qunitjs.com/testedwith.svg)](https://qunitjs.com/)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen?style=flat-square)](https://github.com/karma-runner/karma-qunit)
+[![npm downloads](https://img.shields.io/npm/dm/karma-qunit?style=flat-square)](https://www.npmjs.com/package/karma-qunit)
 
 > Adapter for the [QUnit](https://qunitjs.com/) testing framework.
 
