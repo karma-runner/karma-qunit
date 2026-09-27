@@ -1,6 +1,6 @@
 {
   "name": "karma-qunit",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "A Karma plugin. Adapter for QUnit testing framework.",
   "main": "lib/index.js",
   "scripts": {
@@ -56,8 +56,8 @@
     "XhmikosR <xhmikosr@gmail.com>",
     "Vojta Jina <vojta.jina@gmail.com>",
     "dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-    "johnjbarton <johnjbarton@johnjbarton.com>",
     "Timo Tijhof <krinkle@fastmail.com>",
+    "johnjbarton <johnjbarton@johnjbarton.com>",
     "Matt DuVall <matt@stripe.com>",
     "masubi <justin.masui@gmail.com>",
     "Johann-S <johann.servoire@gmail.com>",
