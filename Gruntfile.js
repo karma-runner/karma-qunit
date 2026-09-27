@@ -23,7 +23,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-npm')
   grunt.loadTasks('tasks')
 
-  grunt.registerTask('test', ['build'])
   grunt.registerTask('default', ['build'])
 
   grunt.registerTask('release', 'Bump the version and publish to NPM.', function (type) {

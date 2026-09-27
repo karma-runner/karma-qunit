@@ -1,28 +1,27 @@
 var initQunit = require('../../lib')['framework:qunit'][1]
-var expect = require('chai').expect
 
-describe('framework:qunit', function () {
+QUnit.module('framework:qunit', function (hooks) {
   var files
 
-  beforeEach(function () {
+  hooks.beforeEach(function () {
     files = []
   })
 
-  it('should add qunit.css', function () {
+  QUnit.test('should add qunit.css', function (assert) {
     initQunit(files)
 
-    expect(files[0].pattern).to.contain('qunit.css')
+    assert.true(files[0].pattern.includes('qunit.css'))
   })
 
-  it('should add qunit.js', function () {
+  QUnit.test('should add qunit.js', function (assert) {
     initQunit(files)
 
-    expect(files[1].pattern).to.contain('qunit.js')
+    assert.true(files[1].pattern.includes('qunit.js'))
   })
 
-  it('should add adapter.js', function () {
+  QUnit.test('should add adapter.js', function (assert) {
     initQunit(files)
 
-    expect(files[2].pattern).to.contain('adapter.js')
+    assert.true(files[2].pattern.includes('adapter.js'))
   })
 })
