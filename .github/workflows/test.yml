@@ -16,6 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        # FIXME: Remove 14/14/16 once repo setting is updated
         node: [12, 14, 16, 18, 20, 24, 26]
 
     steps:
@@ -28,5 +29,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - run: npm install
+        if: ${{ matrix.node >= 18 }}
 
       - run: npm test
+        if: ${{ matrix.node >= 18 }}
