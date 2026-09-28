@@ -1,6 +1,6 @@
-const fs = require('node:fs')
-const path = require('node:path')
-const vm = require('node:vm')
+const fs = require('fs')
+const path = require('path')
+const vm = require('vm')
 const sinon = require('sinon')
 
 const adapterJs = fs.readFileSync(path.join(__dirname, '../src/adapter.js'), 'utf8')
