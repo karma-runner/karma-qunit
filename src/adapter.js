@@ -56,7 +56,7 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
       var result = {
         description: test.name,
         suite: (test.suiteName && [test.suiteName]) || [],
-        success: test.status === 'passed' || test.status === 'skipped',
+        success: test.status === 'passed' || test.status === 'skipped' || test.status === 'todo',
         skipped: test.status === 'skipped',
         log: (test.errors || []).map(function (details) {
           var msg = details.message + '\n'

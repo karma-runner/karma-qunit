@@ -45,6 +45,17 @@ INFO [Firefox]: Connected on socket
   Expected: true
   Actual: false
   @test.js:2:10`],
+  todo: ['examples/todo/karma.conf.js', 0, `
+    START:
+INFO [karma-server]: Karma server started
+INFO [launcher]: Launching browsers FirefoxHeadless with concurrency unlimited
+INFO [launcher]: Starting browser FirefoxHeadless
+INFO [Firefox]: Connected on socket
+  ✔ it works
+  ✔ not yet
+  Finished in
+  SUMMARY:
+✔ 2 tests completed`],
   config_autostart: ['examples/config/autostart_false.karma.conf.js', 0, `
     START:
 INFO [karma-server]: Karma server started
