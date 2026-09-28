@@ -4,11 +4,7 @@ const vm = require('node:vm')
 const sinon = require('sinon')
 
 const adapterJs = fs.readFileSync(path.join(__dirname, '../src/adapter.js'), 'utf8')
-const frozenTime = new Date('2011-04-01T09:00:00Z').getTime()
 const context = {
-  Date: function () {
-    return new Date(frozenTime)
-  },
   setTimeout () {},
   window: {}
 }
@@ -41,14 +37,14 @@ QUnit.module('adapter', function (hooks) {
 
     var mockQUnitResult = {
       name: 'should do something',
-      module: 'desc1',
-      skipped: false,
-      failed: 0
+      suiteName: 'desc1',
+      status: 'passed',
+      runtime: 0,
+      errors: []
     }
 
     runner.emit('begin', { totalTests: 1 })
-    runner.emit('testStart', mockQUnitResult)
-    runner.emit('testDone', mockQUnitResult)
+    runner.emit('testEnd', mockQUnitResult)
     runner.emit('done')
 
     assert.true(karma.result.called, 'result called')
@@ -74,24 +70,22 @@ QUnit.module('adapter', function (hooks) {
     karma.start()
 
     var mockQUnitResult = {
-      module: 'desc1',
-      failed: 1,
-      name: 'should do something'
+      name: 'should do something',
+      suiteName: 'desc1',
+      status: 'failed',
+      runtime: 0,
+      errors: [{
+        passed: false,
+        message: 'Big trouble.',
+        expected: {
+          foo: 'bar',
+          baz: [1, 2, 3]
+        },
+        stack: 'bar@example.js:42'
+      }]
     }
-    var mockQUnitLog = {
-      result: false,
-      message: 'Big trouble.',
-      expected: {
-        foo: 'bar',
-        baz: [1, 2, 3]
-      },
-      source: 'bar@example.js:42'
-    }
-
     runner.emit('begin', { totalTests: 1 })
-    runner.emit('testStart', mockQUnitResult)
-    runner.emit('log', mockQUnitLog)
-    runner.emit('testDone', mockQUnitResult)
+    runner.emit('testEnd', mockQUnitResult)
     runner.emit('done')
 
     assert.true(karma.result.called, 'result called')
