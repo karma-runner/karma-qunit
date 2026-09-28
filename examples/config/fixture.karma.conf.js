@@ -9,9 +9,14 @@ module.exports = function (config) {
     frameworks: ['qunit'],
     reporters: ['mocha'],
 
+    client: {
+      qunit: {
+        fixture: 'foobar'
+      }
+    },
+
     files: [
-      'test.js',
-      'test-with-fixture.js'
+      'fixture.test.js'
     ],
 
     autoWatch: false,

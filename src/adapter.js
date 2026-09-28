@@ -123,6 +123,10 @@ function createQUnitStartFn (tc, runnerPassedIn) { // eslint-disable-line no-unu
     //
     // https://github.com/karma-runner/karma-qunit/issues/27
     if (config.autostart !== false) {
+      // If config.autostart is undefined (default) or explicitly true,
+      // start when Karma is ready. Otherwise, if the user explicitly
+      // sets it to false (instead of merely karma-qunit setting it to false),
+      // then we step out of the way and let the user call QUnit.start.
       setTimeout(function () {
         runner.start()
       }, qunitOldTimeout)

@@ -9,9 +9,14 @@ module.exports = function (config) {
     frameworks: ['qunit'],
     reporters: ['mocha'],
 
+    client: {
+      qunit: {
+        autostart: false
+      }
+    },
+
     files: [
-      'test.js',
-      'test-with-fixture.js'
+      'autostart_false.test.js'
     ],
 
     autoWatch: false,

@@ -5,12 +5,10 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "grunt build",
-    "lint": "eslint .",
-    "karma": "npm run karma:adapter && npm run karma:simplequnit",
-    "karma:adapter": "karma start karma.conf.js --single-run",
-    "karma:simplequnit": "karma start examples/simple/karma.conf.js --single-run",
-    "unit": "qunit test/lib",
-    "test": "npm run lint && npm run build && npm run karma && npm run unit"
+    "lint": "eslint --cache .",
+    "lint-fix": "eslint --cache --fix .",
+    "unit": "qunit test/",
+    "test": "npm run lint && npm run build && npm run unit"
   },
   "repository": {
     "type": "git",
@@ -43,8 +41,9 @@
     "grunt-npm": "0.0.2",
     "karma": "^6.3.9",
     "karma-firefox-launcher": "^2.1.2",
-    "karma-jasmine": "^4.0.1",
-    "qunit": "^3.0.0"
+    "karma-mocha-reporter": "^2.2.5",
+    "qunit": "^3.0.0",
+    "sinon": "^22.1.0"
   },
   "peerDependencies": {
     "karma": "^4.0.0 || ^5.0.0 || ^6.0.0",
