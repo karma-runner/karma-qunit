@@ -1,4 +1,5 @@
 *.log
 /node_modules/
+/.eslintcache
 /package-lock.json
 /lib/adapter.js

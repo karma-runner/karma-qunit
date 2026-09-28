@@ -1,6 +1,6 @@
-var initQunit = require('../../lib')['framework:qunit'][1]
+var initQunit = require('../lib')['framework:qunit'][1]
 
-QUnit.module('framework:qunit', function (hooks) {
+QUnit.module('framework', function (hooks) {
   var files
 
   hooks.beforeEach(function () {

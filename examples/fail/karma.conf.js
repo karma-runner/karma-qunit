@@ -10,8 +10,7 @@ module.exports = function (config) {
     reporters: ['mocha'],
 
     files: [
-      'test.js',
-      'test-with-fixture.js'
+      'test.js'
     ],
 
     autoWatch: false,
